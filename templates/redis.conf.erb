@@ -14,12 +14,12 @@
 
 daemonize      yes
 pidfile        /var/run/redis/redis-server.pid
-port           <%= port %>
-bind           <%= ip %>
-unixsocket     <%= unixsocket %>
-unixsocketperm <%= unixsocketperm %>
+port           <%= @port %>
+bind           <%= @ip %>
+unixsocket     <%= @unixsocket %>
+unixsocketperm <%= @unixsocketperm %>
 timeout        0
-loglevel       <%= loglevel %>
+loglevel       <%= @loglevel %>
 logfile        /var/log/redis/redis-server.log
 databases      16
 save           900 1
@@ -37,7 +37,7 @@ slave-read-only yes
 slave-priority  100
 
 # maxclients 10000
-maxmemory <%= maxmemory %>
+maxmemory <%= @maxmemory %>
 maxmemory-policy volatile-lru
 maxmemory-samples 3
 
